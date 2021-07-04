@@ -3,38 +3,36 @@ const commaNumber = require('comma-number')
 
 
 export default function CountryDetails() {
-	// const { id } = useParams();
-	// const [details, setDetails] = useState([]);
+	
+	let {countries} = useLocation()
+	let {singleCountry} = useLocation()
 
-	// useEffect(() => {
-	// 	fetch(`https://restcountries.eu/rest/v2/name/${id}`)
-	// 		.then(res => res.json())
-	// 		.then(data => {
-	// 			setDetails(data[0]);
-	// 		})
-	// 		.catch((err) => {
-	// 			console.log(err);
-	// 		})
-	// }, [id]);
+	const languages = singleCountry.languages
+	.map(lan => lan.name)
+	.toString()
+	.split(",")
+	.join(", ");
 
-let {allCountries} = useLocation()
-let {singleCountry} = useLocation()
+const borderCountries = singleCountry.borders.map(border => border);
+let borderCountriesNames = [];
 
-let languages = []
+const getNames = (arr1, arr2) => {
+	arr1.forEach(name => {
+		arr2.forEach(item => {
+			if (item.alpha3Code === name) {
+				borderCountriesNames.push(item.name);
+			}
+		});
+	});
+};
 
-		// allCountries.forEach(entry => {
-		// 	singleCountry.languages.map(lang => {
-		// 		if (entry.includes(lang.name)) {
-		// 				languages.push(lang.name)
-		// 		}
-		// 		return languages
-		// 	})
-		// })
+getNames(borderCountries, countries);
 
-		console.log(allCountries.forEach(code => code.alpha3Code
-		));
+if (borderCountriesNames.length === 0) {
+	borderCountriesNames.push("None. It's an island");
+}
 
-	// console.log(singleCountry.languages.map(lan=>lan.name));
+console.log(borderCountriesNames);
 
 		return (
 			<>
@@ -51,7 +49,6 @@ let languages = []
 						<div className="column is-6 mt-6">
 							<img src={singleCountry.flag} alt="Flag" />
 						</div>
-						{/* {singleCountry.map(country => <h4>{country.name}</h4> )} */}
 						<div className="column is-6 mt-6">
 							<h2 className="detail-text is-size-2"> <span> {singleCountry.name}</span></h2>
 							<h3 className="detail-text">Native name: <span> {singleCountry.nativeName}</span></h3>
@@ -61,7 +58,7 @@ let languages = []
 							<h3 className="detail-text">Capital: <span> {singleCountry.capital}</span></h3>
 							<h3 className="detail-text">Top Level Domain: <span> {singleCountry.topLevelDomain}</span></h3>
 							<h3 className="detail-text"><strong>Currencies:</strong> {singleCountry.currencies.map(c => c.name)}</h3>
-							<h3 className="detail-text"><strong>Languages:</strong> {singleCountry.languages.map(lan => lan.name)}</h3>
+							<h3 className="detail-text"><strong>Languages:</strong> {languages}</h3>
 						</div>
 					</div>
 				</div>

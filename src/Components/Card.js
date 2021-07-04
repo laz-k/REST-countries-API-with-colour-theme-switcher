@@ -7,7 +7,7 @@ export default function Card({ country, countries }) {
 	// const detailsUrl = `/country/${country.name}`;
 
 	return (
-		<Link to={{pathname: `/country/${country.name}`, singleCountry: country, allCountries: countries}}  >
+		<Link to={{pathname: `/country/${country.name}`, singleCountry: country, countries: countries}}  >
 			<div className="grid-card">
 				<div className="card">
 					<div className="card-image">

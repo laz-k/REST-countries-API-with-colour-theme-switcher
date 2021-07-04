@@ -32,14 +32,12 @@ export default function Home() {
 		setSelectRegion(e.target.value);
 	};
 
-	const  [countriesToPass]  = [countries];
-	
-	const filteredCountries = countries.filter(country =>
+		const filteredCountries = countries.filter(country =>
 		country.name.toLowerCase().includes(inputCountry.toLowerCase())
 		);
 		
 		const results = filteredCountries.map((country, index) => {
-			return <Card country={country} key={index} countries={countriesToPass} />;
+			return <Card country={country} key={index} countries={countries} />;
 		});
 		
 		return (
