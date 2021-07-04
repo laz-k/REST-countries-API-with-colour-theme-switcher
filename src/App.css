@@ -143,9 +143,24 @@ select {
 .grid {
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: (minmax(300px, 1fr))[auto-fit];
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 20px;
-  padding: 30px;
+  -ms-grid-columns: (minmax(300px, 1fr))[auto-fill];
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 2rem;
+  padding: 2rem;
+}
+
+.grid-card:hover {
+  -webkit-box-shadow: 0px 0px 7px #818181;
+          box-shadow: 0px 0px 7px #818181;
+  -webkit-transform: scale(1.02);
+          transform: scale(1.02);
+}
+
+.button {
+  border: 0 !important;
+}
+
+.detail-text {
+  font-weight: 600;
 }
 /*# sourceMappingURL=App.css.map */

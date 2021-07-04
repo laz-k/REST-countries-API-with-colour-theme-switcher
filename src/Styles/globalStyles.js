@@ -2,6 +2,10 @@ import { createGlobalStyle } from "styled-components";
 
 export const GlobalStyles = createGlobalStyle`
 
+  html{
+    background: ${({ theme }) => theme.body};
+  }
+
   body {
     background: ${({ theme }) => theme.body};
   }
@@ -48,6 +52,32 @@ export const GlobalStyles = createGlobalStyle`
 	  border-color: ${({ theme }) => theme.text};
 }
 
+.card {
+  background: ${({ theme }) => theme.primary};
+}
+
+.card h3, .card h5{
+  color: ${({ theme }) => theme.text};
+}
+
+.fa-arrow-left {
+  color: ${({ theme }) => theme.text};
+}
+
+.button{
+  background: ${({ theme }) => theme.primary};
+  color: ${({ theme }) => theme.text};
+}
+
+.detail-text {
+  color: ${({ theme }) => theme.text};
+}
+
+strong {
+  color: ${({ theme }) => theme.text};
+}
+
+
 `
 
 export const lightTheme = {
@@ -63,6 +93,7 @@ export const lightTheme = {
 export const darkTheme = {
   body: "#202c37",
   text: "white !important",
+  primary: "#2b3945",
   icon: "#2b3945",
   switchBack: "white",
   switch: "#202c37",
