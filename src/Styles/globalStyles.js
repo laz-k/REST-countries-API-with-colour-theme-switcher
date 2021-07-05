@@ -64,7 +64,7 @@ export const GlobalStyles = createGlobalStyle`
   color: ${({ theme }) => theme.text};
 }
 
-.button{
+.button {
   background: ${({ theme }) => theme.primary};
   color: ${({ theme }) => theme.text};
 }
@@ -77,6 +77,10 @@ strong {
   color: ${({ theme }) => theme.text};
 }
 
+.borders {
+  background: ${({ theme }) => theme.primary};
+  color: ${({ theme }) => theme.text};
+}
 
 `
 

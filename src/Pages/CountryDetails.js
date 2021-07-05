@@ -51,6 +51,8 @@ export default function CountryDetails() {
 					</div>
 					<div className="column is-6 mt-6">
 						<h2 className="detail-text is-size-2">{singleCountry.name}</h2>
+					<div className="columns">
+					<div className="column">
 						<h3 className="detail-text">
 							Native name: <span> {singleCountry.nativeName}</span>
 						</h3>
@@ -66,6 +68,8 @@ export default function CountryDetails() {
 						<h3 className="detail-text">
 							Capital: <span> {singleCountry.capital}</span>
 						</h3>
+						</div>
+						<div className="container-details-right column">
 						<h3 className="detail-text">
 							Top Level Domain: <span> {singleCountry.topLevelDomain}</span>
 						</h3>
@@ -75,6 +79,8 @@ export default function CountryDetails() {
 						<h3 className="detail-text">
 							Languages: <span key={singleCountry.alpha2Code}>{languages}</span>
 						</h3>
+						</div>
+						</div>
 						<div className="columns">
 							<div className="column">
 								<h2 className="detail-text is-size-4 mt-4">Border Countries: </h2>

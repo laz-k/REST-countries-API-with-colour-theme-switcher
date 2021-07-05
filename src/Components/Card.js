@@ -4,8 +4,6 @@ const commaNumber = require('comma-number')
 
 export default function Card({ country, countries }) {
 
-	// const detailsUrl = `/country/${country.name}`;
-
 	return (
 		<Link to={{pathname: `/country/${country.name}`, singleCountry: country, countries: countries}}  >
 			<div className="grid-card">
